@@ -39,8 +39,6 @@ class MainViewController: NSViewController, NSTableViewDelegate, NSTableViewData
         column.title = "test"
         column.headerCell.alignment = .center
         tableView.addTableColumn(column)
-//        tableView.addTableColumn(column1)
-        
         
         return tableView
     }()
@@ -85,9 +83,7 @@ class MainViewController: NSViewController, NSTableViewDelegate, NSTableViewData
         }
         
         tableView.reloadData()
-        
     }
-    
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
@@ -101,7 +97,6 @@ class MainViewController: NSViewController, NSTableViewDelegate, NSTableViewData
         
         return nil
     }
-    
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         return names.count
@@ -128,7 +123,7 @@ class MainViewController: NSViewController, NSTableViewDelegate, NSTableViewData
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-            ])
+        ])
     }
 }
 

@@ -21,10 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        
         windowCotroller.showWindow(self)
-        
-        print("We are here!!")
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
@@ -39,18 +36,16 @@ class WindowCotroller: NSWindowController, NSWindowDelegate {
         super.init(window: window)
         
         window?.delegate = self
-        window?.setFrameUsingName(NSWindow.FrameAutosaveName(rawValue: "MyWindowww"))
+        window?.setFrameUsingName(NSWindow.FrameAutosaveName(rawValue: "MyWindow"))
         window?.titlebarAppearsTransparent = true
         window?.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
         window?.aspectRatio = NSSize(width: 4, height: 3)
         window?.collectionBehavior = .fullScreenNone
         window?.minSize = NSSize(width: 400, height: 300)
         
-        
         let viewController = MainViewController()
         viewController.view.frame = window!.frame
         window?.contentViewController = viewController
-        
     }
     
     required init?(coder: NSCoder) {
@@ -58,18 +53,8 @@ class WindowCotroller: NSWindowController, NSWindowDelegate {
     }
     
     func windowWillClose(_ notification: Notification) {
-        window?.saveFrame(usingName: NSWindow.FrameAutosaveName(rawValue: "MyWindowww"))
+        window?.saveFrame(
+            usingName: NSWindow.FrameAutosaveName(rawValue: "MyWindow")
+        )
     }
-    
 }
-
-
-
-
-
-
-
-
-
-
-
